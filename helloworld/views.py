@@ -4,6 +4,5 @@ from django.contrib import auth
 from django.http import HttpResponse
 from django.contrib.auth.models import User
 
-
 def index(request):
-    return HttpResponse('嗨!,我是蔡涵如，今年資管系大三')
+    return render(request,'board.html')
