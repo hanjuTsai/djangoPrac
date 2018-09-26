@@ -3,37 +3,47 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/gallery.css' %}">
+  <link rel="stylesheet" href="{% static 'css/pageheader.css' %}">
+
 </head>
 <body>
-   {% load static %}
-  <link rel="stylesheet" href="{% static 'css/gallery.css' %}">
-  <div class="gallery">
-    <a target="_blank" href="{% static "images/sample1.jpg" %}">
-       
-      <img src="{% static "images/sample1.jpg" %}" alt="Sample1" width="600" height="400">
-    </a>
-    <div class="desc">Add a description of the image here</div>
+  <!-- Header -->
+  <div class="page-header">
+    <h1><a href="/">Shop now</a></h1>
   </div>
 
-  <div class="gallery">
-    <a target="_blank" href="{% static "images/sample2.jpg" %}">
-      <img src="{% static "images/sample2.jpg" %}" alt="Sample2" width="600" height="400">
-    </a>
-    <div class="desc">Add a description of the image here</div>
-  </div>
+  <!-- Gallery -->
+  <div>
+    <div class="gallery">
+      <a target="_blank" href="{% static "images/sample1.jpg" %}">
+        <img src="{% static "images/sample1.jpg" %}" alt="Sample1" width="600" height="400">
+      </a>
+      <div class="desc">Add a description of the image here</div>
+    </div>
 
-  <div class="gallery">
-    <a target="_blank" href="{% static "images/sample3.jpg" %}">
-      <img src="{% static "images/sample3.jpg" %}"  alt="Sample3" width="600" height="400">
-    </a>
-    <div class="desc">Add a description of the image here</div>
-  </div>
+    <div class="gallery">
+      <a target="_blank" href="{% static "images/sample2.jpg" %}">
+        <img src="{% static "images/sample2.jpg" %}" alt="Sample2" width="600" height="400">
+      </a>
+      <div class="desc">Add a description of the image here</div>
+    </div>
 
-  <div class="gallery">
-    <a target="_blank" href="{% static "images/sample4.jpg" %}">
-      <img src="{% static "images/sample4.jpg" %}" alt="Sample4" width="600" height="400">
-    </a>
-    <div class="desc">Add a description of the image here</div>
+    <div class="gallery">
+      <a target="_blank" href="{% static "images/sample3.jpg" %}">
+        <img src="{% static "images/sample3.jpg" %}"  alt="Sample3" width="600" height="400">
+      </a>
+      <div class="desc">Add a description of the image here</div>
+    </div>
+
+    <div class="gallery">
+      <a target="_blank" href="{% static "images/sample4.jpg" %}">
+        <img src="{% static "images/sample4.jpg" %}" alt="Sample4" width="600" height="400">
+      </a>
+      <div class="desc">Add a description of the image here</div>
+    </div>
   </div>
 
 </body>
