@@ -15,6 +15,18 @@
     <h1><a href="/">Shop now</a></h1>
   </div>
 
+  <!-- Dynamically Gernerate the photos from the images folder-->
+  <div>
+    {% for image in images %}
+      <div class="gallery">
+        <a target="_blank" href='/static/images/{{image}}' >
+          <img src='/static/images/{{image}}' alt="{{image}}">
+        </a>
+      <div class="desc">"Add description "</div>
+  </div>
+
+    {% endfor %}
+  </div>
   <!-- Gallery -->
   <div>
     <div class="gallery">
