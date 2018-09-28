@@ -20,11 +20,10 @@
     {% for image in images %}
       <div class="gallery">
         <a target="_blank" href='/static/images/{{image}}' >
-          <img src='/static/images/{{image}}' alt="{{image}}">
+          <img src='/static/images/{{image}}'>
         </a>
-      <div class="desc">"Add description "</div>
+        <div>{{image}}</div>
       </div>
-
     {% endfor %}
   </div>
 
