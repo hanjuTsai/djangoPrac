@@ -10,9 +10,17 @@
 4. Install the heroku command line tool and learn how to use it.
 
 ## Week2
-1. Learn how to use HTML + CSS
-2. Learn how to use dynamic path in html
-3. Learn how to generate image src tag with for loop
+1. HTML + CSS
+2. Ue dynamic path in html
+3. Generate image src tag with for loop
+
+## Week3
+1. Create an url and connect the button action with the the function
+```
+<form action='upload/' method='GET'>
+<button type='submit' class="btn btn-success">Upload New Photo</button>
+</form> 
+```
 
 ## My web link
 https://hanjuprac.herokuapp.com

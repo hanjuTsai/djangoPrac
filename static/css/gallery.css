@@ -6,7 +6,7 @@ div.gallery {
    border-radius: 25px;
 }
 
-div.gallery: hover {
+div.gallery hover {
     border: 1px solid #777;
 }
 
@@ -17,9 +17,7 @@ div.gallery img {
     border-radius: 25px 25px 0px 0px;
 }
 
-
-
 div.gallery div {
-    gray solid;
-    word-wrap:break-word;
+    color : gray solid;
+    word-wrap: break-word;
 }

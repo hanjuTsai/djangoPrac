@@ -4,6 +4,12 @@
 <head>
   <meta charset="utf-8">
 
+  <!--BootStrap Example-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
   {% load static %}
   <link rel="stylesheet" href="{% static 'css/gallery.css' %}">
   <link rel="stylesheet" href="{% static 'css/pageheader.css' %}">
@@ -14,7 +20,6 @@
   <div class="page-header">
     <h1><a href="/">Shop now</a></h1>
   </div>
-
   <!-- Dynamically Gernerate the photos from the images folder-->
   <div>
     {% for image in images %}
@@ -26,6 +31,11 @@
       </div>
     {% endfor %}
   </div>
+ 
 
+  <!-- Button click and direct to another page -->
+  <form action='upload/' method='GET'>
+    <button type='submit' class="btn btn-success">Upload New Photo</button>
+  </form>    
 </body>
 </html>

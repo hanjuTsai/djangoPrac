@@ -21,5 +21,9 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index)
+    path('', views.index),
+
+    ## The path direct to upload page
+    path('upload/', views.upload),
+
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
