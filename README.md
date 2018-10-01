@@ -16,7 +16,8 @@
 
 ## Week3
 1. Create an url and connect the button action with the the function
-```
+
+```{html}
 <form action='upload/' method='GET'>
 <button type='submit' class="btn btn-success">Upload New Photo</button>
 </form> 
