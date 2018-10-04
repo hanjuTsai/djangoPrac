@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+    {% load static %}
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<title>Home</title>
+		<meta name="description" content="Perspective Page View Navigation: Transforms the page in 3D to reveal a menu" />
+		<meta name="keywords" content="3d page, menu, navigation, mobile, perspective, css transform, web development, web design" />
+		<meta name="author" content="Codrops" />
+		<!-- <link rel="shortcut icon" href="../favicon.ico"> -->
+		<link rel="stylesheet" type="text/css" href="{% static 'navigateBar/css/normalize.css' %}" />
+		<link rel="stylesheet" type="text/css" href="{% static 'navigateBar/css/demo.css' %}" />
+		<link rel="stylesheet" type="text/css" href="{% static 'navigateBar/css/component.css' %}" />
+		<!-- csstransforms3d-shiv-cssclasses-prefixed-teststyles-testprop-testallprops-prefixes-domprefixes-load --> 
+		<script src="{% static 'navigateBar/js/modernizr.custom.25376.js' %}"></script>
+	</head>
+	<body>
+		<div id="perspective" class="perspective effect-laydown">
+			<div class="container">
+				<div class="wrapper"><!-- wrapper needed for scroll -->
+					<!-- Top Navigation -->
+					<div class="codrops-top clearfix">
+						<a class="codrops-icon codrops-icon-prev" href="http://tympanus.net/Development/ProgressButtonStyles/"><span>Previous Demo</span></a>
+						<span class="right"><a class="codrops-icon codrops-icon-drop" href="http://tympanus.net/codrops/?p=17915"><span>Back to the Codrops Article</span></a></span>
+					</div>
+					<header class="codrops-header">
+						<h1>Perspective Page View Navigation <span>Transforms the page in 3D to reveal a menu</span></h1>	
+					</header>
+					<div class="main clearfix">
+						<div class="column">
+							<p><button id="showMenu">Menu</button></p>
+						</div>
+					</div><!-- /main -->
+				</div><!-- wrapper -->
+			</div><!-- /container -->
+			<nav class="outer-nav top horizontal">
+				<a href="/home/" class="icon-home">Home</a>
+				<a href="/products/" class="icon-star">Favorites</a>
+				<a href="/upload/" class="icon-upload">Uploads</a>
+				<a href="#" class="icon-mail">Messages</a>
+				<a href="#" class="icon-lock">Security</a>
+			</nav>
+		</div><!-- /perspective -->
+		<script src="{% static 'navigateBar/js/classie.js' %}"></script>
+		<script src="{% static 'navigateBar/js/menu.js' %}"></script>
+	</body>
+</html>
