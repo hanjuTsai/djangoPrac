@@ -16,6 +16,8 @@
 
 ## Week3
 1. Create an url and connect the button action with the the function
+2. Finish the upload board without backend support
+3. Switch the page with the navigation bar
 
 ```{html}
 <form action='upload/' method='GET'>

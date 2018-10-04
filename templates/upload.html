@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+  <title>My Shopping Mall</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -10,24 +10,29 @@
 </head>
 <body>
 
-<nav class="navbar navbar-default">
+  <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">WebSiteName</a>
+      <a class="navbar-brand" href="#">My Shopping Mall</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
-      <li><a href="#">Page 1</a></li>
-      <li><a href="#">Page 2</a></li>
-      <li><a href="#">Page 3</a></li>
+       <li class="active">
+          <a href="/">Home</a>
+      </li>
+      <li><a href="/">Page 1</a></li>
+      <li><a href="/">Page 2</a></li>
+     <li><a href="/">Page 3</a></li>
     </ul>
   </div>
 </nav>
   
 <div class="container">
-  <h3>Basic Navbar Example</h3>
-  <p>A navigation bar is a navigation header that is placed at the top of the page.</p>
+  <h1>Upload Board</h1>
+  <form action="/" method="post" enctype="multipart/form-data">
+      <h2>It cannot be uploaded now</h2>
+      <input type="file" name="fileToUpload" id="fileToUpload">
+      <button type='submit' class="btn btn-success" name="submit">Upload</button>
+  </form>
 </div>
-
 </body>
 </html>
