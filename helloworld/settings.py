@@ -139,6 +139,4 @@ USE_L10N = True
 USE_TZ = True
 
 
-
-
 django_heroku.settings(locals())

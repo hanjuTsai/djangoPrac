@@ -15,3 +15,6 @@ def index(request):
 
 def upload(request):
     return render(request,'upload.html')
+
+def home(request):
+    return render(request,'home.html')

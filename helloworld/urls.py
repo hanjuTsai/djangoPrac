@@ -21,8 +21,13 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index),
+    path('', views.home),
 
+    path('products/', views.index),
+
+
+    ## THe path direct to the home page
+    path('home/', views.home),
     ## The path direct to upload page
     path('upload/', views.upload),
 
