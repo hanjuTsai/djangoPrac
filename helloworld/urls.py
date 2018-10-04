@@ -26,4 +26,4 @@ urlpatterns = [
     ## The path direct to upload page
     path('upload/', views.upload),
 
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+] + static(settings.STATIC_URL, document_root = settings.STATIC_ROOT)
