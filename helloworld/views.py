@@ -26,7 +26,7 @@ def upload_image(Path):
         print(uploaded_image.size)
         print(uploaded_image.type)
         print(uploaded_image.deletehash)
-        Products.objects.create(title = uploaded_image.title, link = uploaded_image.link, 
+        Products.objects.create(title = uploaded_image.title, link = uploaded_image.link,
             size = uploaded_image.size, filetype = uploaded_image. type, deletehash = uploaded_image.deletehash)
 
 def index(request):
