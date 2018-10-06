@@ -32,6 +32,7 @@ def index(request):
     ## Create a relative path
     img_list = Products.objects.filter().values_list('link',flat=True)
     images = []
+    print(img_list)
     CLIENT_ID = "af3a88200ef32c0"
     #images.extend(img_list)
     return render(request,'products.html', locals())
