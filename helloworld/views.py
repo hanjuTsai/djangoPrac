@@ -32,10 +32,10 @@ def upload_image(Path):
 def index(request):
     ## Create a relative path
     img_list = Products.objects.filter().values_list('link',flat=True)
-    tmp = []
-    tmp.extend(img_list)
-    print(tmp)
-    return render(request,'products.html',{'images' : tmp})
+    images = []
+    CLIENT_ID = "af3a88200ef32c0"
+    images.extend(img_list)
+    return render(request,'products.html', locals())
 
 def upload(request):
     return render(request,'upload.html')
