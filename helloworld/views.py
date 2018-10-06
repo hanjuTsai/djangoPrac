@@ -34,7 +34,7 @@ def index(request):
     images = []
     print(type(img_list))
     CLIENT_ID = "af3a88200ef32c0"
-    #images.extend(img_list)
+    images.extend(img_list)
     return render(request,'products.html', locals())
 
 def upload(request):
