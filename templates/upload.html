@@ -1,38 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>My Shopping Mall</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+{% extends 'base.html' %}
+
+{% block stylesheet %}
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</head>
-<body>
+{% endblock %}
 
-  <nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">My Shopping Mall</a>
-    </div>
-    <ul class="nav navbar-nav">
-       <li >
-          <a href="/">Home</a>
-      </li>
-      <li class="active"><a href="/upload/">Upload</a></li>
-      <li><a href="/">Page 2</a></li>
-     <li><a href="/">Page 3</a></li>
-    </ul>
-  </div>
-</nav>
-  
-<div class="container">
-  <h1>Upload Board</h1>
-  <form action="/" method="post" enctype="multipart/form-data">
-      <h2>It cannot be uploaded now</h2>
-      <input type="file" name="fileToUpload" id="fileToUpload">
-      <button type='submit' class="btn btn-success" name="submit">Upload</button>
-  </form>
+{% block head %}
+<h1>Upload Board</h1>
+{% endblock %}
+
+{% block mainbody %} 
+<div class="row">
+      <div>
+        <form action="/" method="post" enctype="multipart/form-data">
+            <h2>It cannot be uploaded now</h2>
+            <input type="file" name="fileToUpload" id="fileToUpload" align="middle">
+            <button type='submit' class="btn btn-success" name="submit">Upload</button>
+        </form>
+      </div>
 </div>
-</body>
-</html>
+{% endblock %}

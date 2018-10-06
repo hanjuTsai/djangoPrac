@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
-	<head>
     {% load static %}
+	<head>
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
-		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Home</title>
 		<meta name="description" content="Perspective Page View Navigation: Transforms the page in 3D to reveal a menu" />
 		<meta name="keywords" content="3d page, menu, navigation, mobile, perspective, css transform, web development, web design" />
@@ -12,18 +12,26 @@
 		<link rel="stylesheet" type="text/css" href="{% static 'navigateBar/css/normalize.css' %}" />
 		<link rel="stylesheet" type="text/css" href="{% static 'navigateBar/css/demo.css' %}" />
 		<link rel="stylesheet" type="text/css" href="{% static 'navigateBar/css/component.css' %}" />
+		{% block stylesheet %}
+		{% endblock %}
 		<script src="{% static 'navigateBar/js/modernizr.custom.25376.js' %}"></script>
-	</head>
+    </head>
 	<body>
 		<div id="perspective" class="perspective effect-laydown">
 			<div class="container">
 				<div class="wrapper"><!-- wrapper needed for scroll -->
-						<div class="codrops-top clearfix">
+					<div class="codrops-top clearfix">
 						<span class="right"><a class="codrops-icon codrops-icon-drop" href="http://tympanus.net/codrops/?p=17915"><span>Back to the Codrops Article</span></a></span>
 					</div>
 					<header class="codrops-header">
-                    <h1>About us</h1>	
+					{% block head %}
+						<h1>About us</h1>
+					{% endblock %}	
 					<p><button id="showMenu">Menu</button></p>
+					<div class="main clearfix">
+					{% block mainbody %}
+					{% endblock %}
+					</div>
 					</header>
 				</div>
 			</div>
@@ -37,5 +45,5 @@
 		</div>
 		<script src="{% static 'navigateBar/js/classie.js' %}"></script>
 		<script src="{% static 'navigateBar/js/menu.js' %}"></script>
-	</body>
+    </body>
 </html>

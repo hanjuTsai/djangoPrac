@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block stylesheet %}
+  <link rel="stylesheet" href="{% static 'css/gallery.css' %}">
+  <link rel="stylesheet" href="{% static 'css/pageheader.css' %}">
+{% endblock %}
+
+{% block head %}
+<h1>Favorite</h1>
+{% endblock %}
+
+{% block mainbody %}
+ {% for image in images %}
+      <div class="gallery">
+        <a target="_blank" href='{{image}}' >
+            <img src="{{image}}">
+        </a>
+        <div>{{image}}</div>
+      </div>
+  {% endfor %}
+{% endblock %}

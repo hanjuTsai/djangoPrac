@@ -5,16 +5,41 @@ from django.http import HttpResponse
 from django.contrib.auth.models import User
 
 from helloworld.settings import STATICFILES_DIRS
+from products.models import Products
+from datetime import date
+
 import os
+import pyimgur
+
+## Utilty functions
+def upload_image(Path):
+    CLIENT_ID = "af3a88200ef32c0"
+    im = pyimgur.Imgur(CLIENT_ID)
+
+    for i in range(len(Path)) :
+        PATH = Path[i]
+        title = str(i)
+        uploaded_image = im.upload_image(PATH, title=title)
+
+        print(uploaded_image.title)
+        print(uploaded_image.link)
+        print(uploaded_image.size)
+        print(uploaded_image.type)
+        print(uploaded_image.deletehash)
+        Products.objects.create(title = uploaded_image.title, link = uploaded_image.link, 
+            size = uploaded_image.size, filetype = uploaded_image. type, deletehash = uploaded_image.deletehash)
 
 def index(request):
     ## Create a relative path
-    p = os.path.join(STATICFILES_DIRS[0],'images')
-    img_list = os.listdir(p)
-    return render(request, 'board.html', {'images': img_list})
+    img_list = Products.objects.filter().values_list('link',flat=True)
+    tmp = []
+    tmp.extend(img_list)
+    print(tmp)
+    return render(request,'products.html',{'images' : tmp})
 
 def upload(request):
     return render(request,'upload.html')
+
 
 def home(request):
     return render(request,'home.html')

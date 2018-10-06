@@ -21,14 +21,15 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home),
 
+    ## The path direct to first page
+    path('', views.home),
+    
     path('products/', views.index),
 
-
-    ## THe path direct to the home page
+    ## The path direct to the home page
     path('home/', views.home),
     ## The path direct to upload page
     path('upload/', views.upload),
 
-] + static(settings.STATIC_URL, document_root = settings.STATIC_ROOT)
+] 
