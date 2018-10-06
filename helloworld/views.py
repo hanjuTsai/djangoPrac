@@ -6,7 +6,6 @@ from django.contrib.auth.models import User
 
 from helloworld.settings import STATICFILES_DIRS
 from products.models import Products
-from datetime import date
 
 import os
 import pyimgur
@@ -34,7 +33,7 @@ def index(request):
     img_list = Products.objects.filter().values_list('link',flat=True)
     images = []
     CLIENT_ID = "af3a88200ef32c0"
-    images.extend(img_list)
+    #images.extend(img_list)
     return render(request,'products.html', locals())
 
 def upload(request):
