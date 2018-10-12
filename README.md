@@ -25,5 +25,15 @@
 </form> 
 ```
 
+## Week 4
+1. PostgreSQL + SQLite
+2. Study the imgur api
+3. Use the {% extend % } tag
+
+## Week 5
+1. Django Form + Models
+2. Upload the local file onto my web
+3. Access the database
+
 ## My web link
 https://hanjuprac.herokuapp.com
