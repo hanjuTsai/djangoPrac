@@ -12,7 +12,7 @@ def model_form_upload(request):
         form = DocumentForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return redirect('home')
+            return redirect('products')
     else:
         form = DocumentForm()
     return render(request, 'upload.html', {

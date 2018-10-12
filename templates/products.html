@@ -14,9 +14,10 @@
 {% for image in images %}
       <div class="gallery">
         <a target="_blank" href="{{ image.document.url }}" >
-            <img src="{{ image.document.url }}">
+            <img src="{{ image.document.url}}">
         </a>
-        <div>{{image.document.url}}</div>
+        <div>{{image.description}}</div> 
+        <div>{{image.uploaded_at}}</div>
       </div>
   {% endfor %}
 {% endblock %}
