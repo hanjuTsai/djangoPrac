@@ -29,10 +29,17 @@ def upload_image(Path):
             size = uploaded_image.size, filetype = uploaded_image. type, deletehash = uploaded_image.deletehash)
 
 def index(request):
-    ## Create a relative path
+
+    ## Create a relative path in the data base relation
     img_list = Products.objects.filter().values_list('link',flat=True)
     images = []
-    print(type(img_list))
+    ## Create a relative path
+    # p = os.path.join(STATICFILES_DIRS[0],'images')
+    # img_list = os.listdir(p)
+    # img_list = list(map(lambda x : os.path.join(p,x), img_list))
+    # print(img_list)
+    # upload_image(img_list)
+
     CLIENT_ID = "af3a88200ef32c0"
     images.extend(img_list)
     return render(request,'products.html', locals())
