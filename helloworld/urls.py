@@ -18,18 +18,23 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 from . import views
+from uploads import views as upv
 
 urlpatterns = [
     path('admin/', admin.site.urls),
 
     ## The path direct to first page
-    path('', views.home),
-    
-    path('products/', views.index),
+    path('', views.home, name = 'home'),
+
+    ## The path show the uploaded files  
+    path('products/', views.index, name = 'prodcuts'),
 
     ## The path direct to the home page
     path('home/', views.home),
     ## The path direct to upload page
-    path('upload/', views.upload),
+    path('upload/', upv.model_form_upload , name='upload'),
 
 ] 
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -10,14 +10,24 @@
 <h1>Upload Board</h1>
 {% endblock %}
 
-{% block mainbody %} 
+<!--  
 <div class="row">
       <div>
-        <form action="/" method="post" enctype="multipart/form-data">
+        <form method="post" enctype="multipart/form-data">
             <h2>It cannot be uploaded now</h2>
-            <input type="file" name="fileToUpload" id="fileToUpload" align="middle">
+            <input type="file" name="fileToUpload" id="fileToUpload">
             <button type='submit' class="btn btn-success" name="submit">Upload</button>
         </form>
       </div>
 </div>
+-->
+
+{% block mainbody %}
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Upload</button>
+  </form>
+
+  <p><a href="{% url 'home' %}">Return to home</a></p>
 {% endblock %}

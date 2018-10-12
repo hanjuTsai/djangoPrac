@@ -11,12 +11,12 @@
 {% endblock %}
 
 {% block mainbody %}
- {% for image in images %}
+{% for image in images %}
       <div class="gallery">
-        <a target="_blank" href='{{image}}' >
-            <img src='{{image}}'>
+        <a target="_blank" href="{{ image.document.url }}" >
+            <img src="{{ image.document.url }}">
         </a>
-        <div>{{image}}</div>
+        <div>{{image.document.url}}</div>
       </div>
   {% endfor %}
 {% endblock %}
