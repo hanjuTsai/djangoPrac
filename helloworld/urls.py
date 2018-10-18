@@ -26,15 +26,15 @@ urlpatterns = [
     ## The path direct to first page
     path('', views.home, name = 'home'),
 
-    ## The path show the uploaded files  
-    path('products/', views.index, name = 'prodcuts'),
+    ## The path show the uploaded files
+    path('products/', views.index, name = 'products'),
 
     ## The path direct to the home page
     path('home/', views.home),
     ## The path direct to upload page
     path('upload/', upv.model_form_upload , name='upload'),
 
-] 
+]
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
