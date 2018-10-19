@@ -1,2 +1,5 @@
 helloworld/__pycache__/*
+media/*
 .vscode/*
+uploads/__pycache__/*
+uploads/migrations/*
