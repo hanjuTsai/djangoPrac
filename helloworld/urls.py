@@ -30,6 +30,8 @@ urlpatterns = [
 
     path('login/', loginpg.login , name = 'login'),
 
+    path('accounts/login/', loginpg.login , name = 'login'),
+
     path('logout/', loginpg.logout),
 
     path('register/', loginpg.register),
@@ -39,7 +41,7 @@ urlpatterns = [
 
     ## The path direct to the home page
     path('home/', views.home, name = 'home'),
-    
+
     ## The path direct to upload page
     path('upload/', upv.model_form_upload , name='upload'),
 

@@ -4,7 +4,6 @@
 <h1>MainPage</h1>
 {% endblock %}
 
-
 {% block mainbody %}
 
 {% if request.user.is_authenticated %}  <!-- 檢查使用者是否通過驗證 -->
@@ -13,6 +12,7 @@
 {% else %}
     <p>You are not login yet!</p>
     <button type="button" type ='submit' onclick="location.href='/login/'" style='color: red'>Login</button>
-{% endif %}
+
+    {% endif %}
 <span style="color: red">{{message}}</span>
 {% endblock %}

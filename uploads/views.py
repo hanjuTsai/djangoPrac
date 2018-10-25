@@ -1,11 +1,13 @@
 from django.shortcuts import render, redirect
 from django.conf import settings
 from django.core.files.storage import FileSystemStorage
+from django.contrib.auth.decorators import login_required
 
 from uploads.models import Document
 from uploads.forms import DocumentForm
 
 
+@login_required
 # Create your views here.
 def model_form_upload(request):
     if request.method == 'POST':
