@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<h1>MainPage</h1>
+{% endblock %}
+
+
+{% block mainbody %}
+
+{% if request.user.is_authenticated %}  <!-- 檢查使用者是否通過驗證 -->
+    Hello：{{name}}
+    <br><button type="button" type ='submit' onclick="location.href='/logout'" style='color: red'>Logout</button>
+{% else %}
+    <p>You are not login yet!</p>
+    <button type="button" type ='submit' onclick="location.href='/login/'" style='color: red'>Login</button>
+{% endif %}
+<span style="color: red">{{message}}</span>
+{% endblock %}

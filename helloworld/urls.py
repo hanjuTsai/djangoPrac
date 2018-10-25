@@ -19,18 +19,27 @@ from django.conf import settings
 from django.conf.urls.static import static
 from . import views
 from uploads import views as upv
+from login import views as loginpg
 
 urlpatterns = [
     path('admin/', admin.site.urls),
 
-    ## The path direct to first page
-    path('', views.home, name = 'home'),
+    path('', loginpg.index),
+
+    path('index/', loginpg.index),
+
+    path('login/', loginpg.login , name = 'login'),
+
+    path('logout/', loginpg.logout),
+
+    path('register/', loginpg.register),
 
     ## The path show the uploaded files
     path('products/', views.index, name = 'products'),
 
     ## The path direct to the home page
-    path('home/', views.home),
+    path('home/', views.home, name = 'home'),
+    
     ## The path direct to upload page
     path('upload/', upv.model_form_upload , name='upload'),
 

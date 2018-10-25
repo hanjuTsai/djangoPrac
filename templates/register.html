@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+{% load  static %}
+{% block head %}
+    <title>註冊頁面</title>
+{% endblock %}
+
+{% block mainbody %}
+<body>
+    <form action="." method="POST" name="form1">
+        {% csrf_token %}
+        <div>FirstName：<input type="text" name="firstname" id="firstname"/></div>
+        <div>LastName：<input type="text" name="lastname" id="lastname"/></div>
+        <div>Account：<input type="text" name="username" id="username" /></div>
+        <div>Passward：<input type="password" name="password" id="password" /></div>
+        <div>Email：<input type="text" name="email" id="email" /></div>        
+        <div>
+            <input type="submit" name="button" id="button" value="送出" />
+        </div>
+    </form>
+    <span style="color: black">{{message}}</span>
+</body>
+</html>
+{% endblock %}
