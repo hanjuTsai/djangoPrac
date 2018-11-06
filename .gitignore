@@ -3,3 +3,4 @@ media/*
 .vscode/*
 uploads/__pycache__/*
 uploads/migrations/*
+media/*

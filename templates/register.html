@@ -3,6 +3,11 @@
 {% load  static %}
 {% block head %}
     <title>註冊頁面</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'navigateBar/css/normalize.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'navigateBar/css/demo.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'navigateBar/css/component.css' %}" />
+    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.3/journal/bootstrap.min.css" rel="stylesheet">
+    <script src="{% static 'navigateBar/js/modernizr.custom.25376.js' %}"></script>
 {% endblock %}
 
 {% block mainbody %}
@@ -15,7 +20,7 @@
         <div>Passward：<input type="password" name="password" id="password" /></div>
         <div>Email：<input type="text" name="email" id="email" /></div>        
         <div>
-            <input type="submit" name="button" id="button" value="送出" />
+            <input type="submit" name="button" class="btn btn-danger" id="button" value="Sent" />
         </div>
     </form>
     <span style="color: black">{{message}}</span>

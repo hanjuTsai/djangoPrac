@@ -1,9 +1,16 @@
 <!DOCTYPE html>
 <html>
 {% load  static %}
+
 <head>
     <title>登入頁面</title>
     <meta http-equiv="Content-Type" content="text/html"; charset="utf-8">
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="{% static 'navigateBar/css/normalize.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'navigateBar/css/demo.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'navigateBar/css/component.css' %}" />
+    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.3/journal/bootstrap.min.css" rel="stylesheet">
+    <script src="{% static 'navigateBar/js/modernizr.custom.25376.js' %}"></script>
 </head>
 <body>
     <form action="." method="POST" name="form1">
@@ -12,9 +19,9 @@
         <div>Account：<input type="text" name="username" id="username" /></div>
         <div>Password：<input type="password" name="password" id="password" /></div>
         <div>
-            <input type="submit"  class="btn btn-primary" name="button" id="button" value="login" />
-            <button type="button" class="btn btn-primary" onclick="location.href='/register/'">register</button>
-            <button type="button" class="btn btn-primary" onclick="location.href='/'">main page</button>
+            <input  type="submit" class="btn btn-danger" name="subject" id="button" value="login"/>
+            <button type="button" class="btn btn-danger" onclick="location.href='/register/'">register</button>
+            <button type="button" class="btn btn-danger" onclick="location.href='/'">Home</button>
         </div>
     </form>
     <span style="color :black ">{{message}}</span>

@@ -15,7 +15,6 @@ import pyimgur
 
 ## Utilty functions
 def upload_image(Path):
-    
     CLIENT_ID = "af3a88200ef32c0"
     im = pyimgur.Imgur(CLIENT_ID)
 
@@ -34,18 +33,8 @@ def upload_image(Path):
 
 @login_required
 def index(request):
-
-    ## Create a relative path in the data base relation
     img_list =  Document.objects.all()
     images = []
-    # ## Create a relative path
-    # p = os.path.join(STATICFILES_DIRS[0],'images')
-    # img_list = os.listdir(p)
-    #img_list = list(map(lambda x : os.path.join(MEDIA_ROOT,x), img_list))
-    # print(img_list)
-    # upload_image(img_list)
-
-    # CLIENT_ID = "af3a88200ef32c0"
     images.extend(img_list)
     return render(request,'products.html', locals())
 

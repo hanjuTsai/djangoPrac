@@ -10,7 +10,11 @@ from uploads.forms import DocumentForm
 @login_required
 # Create your views here.
 def model_form_upload(request):
+    info = list(request.POST.keys())
     if request.method == 'POST':
+        if len(info) >= 1:
+            description = info[1]
+            images = Document.objects.filter(description = description)
         form = DocumentForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
@@ -18,5 +22,5 @@ def model_form_upload(request):
     else:
         form = DocumentForm()
     return render(request, 'upload.html', {
-        'form': form
+        'form': form , 'images': images
     })

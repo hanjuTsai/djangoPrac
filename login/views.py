@@ -14,17 +14,20 @@ def register(request):
 		name = request.POST['username']
 		password = request.POST['password']
 		email = request.POST.get('email', False)
-
+		# Wrong format		
+		if name == "" or password == "" or email == "":
+			message = "wrong format!"
+			return render(request, "register.html", locals())	
 		try:
 			user = User.objects.get(username=name)
 		except:
 			user = None
 		if user is not None:
-			message = '此使用者已經有人使用'
+			message = 'The account is used!'
 		else:
 			user = User.objects.create_user(name, email, password)
 			user.save()
-			message = "註冊成功"
+			message = "login success!"
 			return render(request, "index.html", locals())
 	return render(request, 'register.html', locals())
 

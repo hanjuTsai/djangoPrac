@@ -1,9 +1,11 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block stylesheet %}
   <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="{% static 'css/gallery.css' %}">
+  <link rel="stylesheet" href="{% static 'css/pageheader.css' %}">
 {% endblock %}
 
 {% block head %}
@@ -12,6 +14,16 @@
 
 
 {% block mainbody %}
+  {% for image in images %}
+    <div>
+        <div class="gallery">
+          <a target="_blank" >
+              <img src="{{image.document.url}}">
+          </a>
+          <div>{{image.description}}</div> 
+          <div>{{image.uploaded_at}}</div>
+    </div>
+  {% endfor %}
   <div>
       <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
