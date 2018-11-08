@@ -18,23 +18,27 @@
   <div>
 
   <form method="post" enctype="multipart/form-data">
-    {{ form.as_p}} 
-    {% for image in images %}
-    <div>
-        <div class="gallery">
-          <a target="_blank" >
-              <img src="{{image.document.url}}">
-          </a>
-          <div>{{image.description}}</div> 
-          <div>{{image.uploaded_at}}</div>
-    </div>
-    {% csrf_token %}
-  
-
-  <button type="submit" name = "upload" value = "{{image.id}}">Upload</button>
-  {% endfor %}
-  {% csrf_token %}
-  <button type="submit" name = "upload" value = "{{image.id}}">Upload</button>
+    
+    
+    {% if images %}
+      {% for image in images %}
+      <div>
+          <div class="gallery">
+            <a target="_blank" >
+                <img src="{{image.document.url}}">
+            </a>
+            <div>{{image.description}}</div> 
+            <div>{{image.uploaded_at}}</div>
+      </div>
+      {% csrf_token %}
+      {{ form.as_p}} 
+      <button type="submit" name = "upload" value = "{{image.id}}">Upload</button>
+      {% endfor %}
+    {% else %}
+      {% csrf_token %}
+      {{ form.as_p}} 
+      <button type="submit" name = "upload" value = "{{image.id}}">Upload</button>
+    {% endif %}
   </form>
   <p><a href="{% url 'home' %}">Return to home</a></p> 
 </div>
