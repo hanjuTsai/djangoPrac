@@ -14,6 +14,10 @@
 
 
 {% block mainbody %}
+
+  <div>
+
+  <form method="post" enctype="multipart/form-data">
   {% for image in images %}
     <div>
         <div class="gallery">
@@ -23,13 +27,12 @@
           <div>{{image.description}}</div> 
           <div>{{image.uploaded_at}}</div>
     </div>
+    {% csrf_token %}
+    {{ form.as_p}} 
+
+    <button type="submit" name = "upload" value = "{{image.id}}">Upload</button>
   {% endfor %}
-  <div>
-      <form method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form.as_p }} 
-        <button type="submit">Upload</button>
-      </form>
-      <p><a href="{% url 'home' %}">Return to home</a></p> 
-  </div>
+  </form>
+  <p><a href="{% url 'home' %}">Return to home</a></p> 
+</div>
 {% endblock %}

@@ -22,7 +22,8 @@
             <div>{{image.uploaded_at}}</div>
             <form action="/modify/" method="POST">
               {% csrf_token %}
-              <input type="submit" value="點我修改" name = "{{image.description}}"/>
+              <button type="submit" name = "update" value =  "{{image.id}}" >Update</button>
+              <button type="submit" name = "delete" value = "{{image.id}}" >Delete</button>
             </form>
       </div>
   {% endfor %}
