@@ -22,18 +22,20 @@ def upload_image(Path):
         PATH = Path[i]
         title = str(i)
         uploaded_image = im.upload_image(PATH, title=title)
-
-        print(uploaded_image.title)
-        print(uploaded_image.link)
-        print(uploaded_image.size)
-        print(uploaded_image.type)
-        print(uploaded_image.deletehash)
         Products.objects.create(title = uploaded_image.title, link = uploaded_image.link,
             size = uploaded_image.size, filetype = uploaded_image. type, deletehash = uploaded_image.deletehash)
 
 @login_required
 def index(request):
-    img_list =  Document.objects.all()
+    print(request.GET)
+    if request.method == "GET":
+        word = request.GET.get('search', None)
+        if word:
+            img_list = Document.objects.filter(description__contains = word) 
+        else:
+            img_list = Document.objects.all()
+    else:
+        img_list =  Document.objects.all()
     images = []
     images.extend(img_list)
     return render(request,'products.html', locals())

@@ -34,7 +34,6 @@ def model_form_modify(request):
                 images.delete()
             elif 'delete' in command:
                 id = request.POST.get('delete')
-                print(id)
                 images = Document.objects.filter(id = id) 
                 #### confirm the data is deleted
                 images.delete() 
