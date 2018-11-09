@@ -12,6 +12,10 @@
 
 
 {% block mainbody %}
+<form type="GET" action="." style="margin: 0">
+  <input  id="search_box" type="text" name="search_box"  placeholder="Search..." >
+  <button id="search_submit" type="submit" >Submit</button>
+</form>
 {% for image in images %}
     <div>
           <div class="gallery">
@@ -22,7 +26,7 @@
             <div>{{image.uploaded_at}}</div>
             <form action="/modify/" method="POST">
               {% csrf_token %}
-              <button type="submit" name = "update" value =  "{{image.id}}" >Update</button>
+              <button type="submit" name = "update" value = "{{image.id}}" >Update</button>
               <button type="submit" name = "delete" value = "{{image.id}}" >Delete</button>
             </form>
       </div>
