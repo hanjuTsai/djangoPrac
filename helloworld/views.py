@@ -31,7 +31,7 @@ def index(request):
     if request.method == "GET":
         word = request.GET.get('search', None)
         if word:
-            img_list = Document.objects.filter(description__contains = word) 
+            img_list = Document.objects.filter(description__contains = word)
         else:
             img_list = Document.objects.all()
     else:

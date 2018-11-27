@@ -14,10 +14,10 @@ def register(request):
 		name = request.POST['username']
 		password = request.POST['password']
 		email = request.POST.get('email', False)
-		# Wrong format		
+		# Wrong format
 		if name == "" or password == "" or email == "":
 			message = "wrong format!"
-			return render(request, "register.html", locals())	
+			return render(request, "register.html", locals())
 		try:
 			user = User.objects.get(username=name)
 		except:
@@ -32,11 +32,11 @@ def register(request):
 	return render(request, 'register.html', locals())
 
 def login(request):
-	if request.method == 'POST':   
-		name = request.POST['username']  
+	if request.method == 'POST':
+		name = request.POST['username']
 		password = request.POST['password']
 		user = auth.authenticate(username=name, password=password)
-		if user is not None:      
+		if user is not None:
 			if user.is_active:
 				auth.login(request,user)
 				return redirect('/index/')

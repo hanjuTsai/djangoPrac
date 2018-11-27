@@ -1,4 +1,4 @@
-from django.apps import AppConfig
+fom django.apps import AppConfig
 
 
 class LoginConfig(AppConfig):
